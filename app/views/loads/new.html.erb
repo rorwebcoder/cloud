@@ -1,0 +1,54 @@
+<h1>New Load</h1>
+
+
+<%= form_tag(loads_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :bill_of_lading %><br />
+    <%= text_field_tag :bill_of_lading %>
+  </div>
+
+  <div>
+    <%= label_tag :carrier_id %><br />
+    <%= select_tag :carrier_id,
+                    options_from_collection_for_select(Carrier.all, :id, :carrier_name) %>
+  </div>
+
+  <div>
+    <%= label_tag :vendor_id %><br />
+    <%= select_tag :vendor_id,
+                    options_from_collection_for_select(Vendor.all, :id, :vendor_name) %>
+  </div>
+
+  <div>
+    <%= label_tag :shipper_id %><br />
+    <%= select_tag :shipper_id,
+                    options_from_collection_for_select(Shipper.all, :id, :shipper_name) %>
+  </div>
+
+  <div>
+    <%= label_tag :equipment_type %><br />
+    <%= text_field_tag :equipment_type %>
+  </div>
+
+  <div>
+    <%= label_tag :inco_terms %><br />
+    <%= text_field_tag :inco_terms %>
+  </div>
+
+  <div>
+    <%= label_tag :freight_terms %><br />
+    <%= text_field_tag :freight_terms %>
+  </div>
+
+  <div>
+    <%= label_tag :Mode %><br />
+    <%= text_field_tag :mode %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Stops" %>
+  </div>
+<% end %>

@@ -1,0 +1,21 @@
+<h1>Editing Shipper #<%= @shipper.id %></h1>
+
+
+<%= form_tag(shipper_url(@shipper), method: 'put') do %>
+
+  <div>
+    <%= label_tag :shipper_name %><br />
+    <%= text_field_tag :shipper_name, @shipper.shipper_name %>
+  </div>
+
+  <div>
+    <%= label_tag :shipper_description %><br />
+    <%= text_field_tag :shipper_description, @shipper.shipper_description %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Shipper" %>
+  </div>
+
+<% end %>

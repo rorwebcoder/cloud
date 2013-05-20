@@ -1,0 +1,57 @@
+<h1>Loads</h1>
+
+<p><%= link_to 'Add a New Load', new_load_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Bill of Lading</th>
+      <th>Carrier</th>
+      <th>Vendor</th>
+      <th>Shipper</th>
+      <th>Equipment Type</th>
+      <th>Inco Terms</th>
+      <th>Freight Terms</th>
+      <th>Mode</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @loads.each do |load| %>
+    <tr>
+      <% v = Vendor.find_by_id(load.vendor_id) %>
+      <% s = Shipper.find_by_id(load.shipper_id) %>
+      <% c = Carrier.find_by_id(load.carrier_id) %>
+      <td><%= load.bill_of_lading %></td>
+      <td>
+        <% if c.present? %>
+          <%= c.carrier_name %>
+        <% end %>
+      </td>
+      <td>
+        <% if v.present? %>
+          <%= v.vendor_name %>
+        <% end %>
+      </td>
+      <td>
+        <% if s.present? %>
+          <%= s.shipper_name %>
+        <% end %>
+      </td>
+      <td><%= load.equipment_type %></td>
+      <td><%= load.inco_terms %></td>
+      <td><%= load.freight_terms %></td>
+      <td><%= load.mode %></td>
+      <td style="padding-right: 500px"</td>
+      <td><%= link_to 'Show', load_url(load) %></td>
+      <td><%= link_to 'Edit', edit_load_url(load) %></td>
+      <td><%= link_to 'Destroy', load_url(load), method: 'delete', data: { confirm: "Do you really want to delete this load?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

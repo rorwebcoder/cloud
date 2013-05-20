@@ -1,0 +1,21 @@
+<h1>Editing Vendor #<%= @vendor.id %></h1>
+
+
+<%= form_tag(vendor_url(@vendor), method: 'put') do %>
+
+  <div>
+    <%= label_tag :vendor_name %><br />
+    <%= text_field_tag :vendor_name, @vendor.vendor_name %>
+  </div>
+
+  <div>
+    <%= label_tag :vendor_description %><br />
+    <%= text_field_tag :vendor_description, @vendor.vendor_description %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Vendor" %>
+  </div>
+
+<% end %>

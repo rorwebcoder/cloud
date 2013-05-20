@@ -1,0 +1,57 @@
+<h1>Add Load Stops</h1>
+
+
+<%= form_tag(stops_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :load_id %><br />
+    <%= number_field_tag :load_id %>
+
+  </div>
+
+  <div>
+    <%= label_tag :stop_type %><br />
+    <%= text_field_tag :stop_type %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_sequence %><br />
+    <%= number_field_tag :stop_sequence %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_name %><br />
+    <%= text_field_tag :stop_name %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_address %><br />
+    <%= text_field_tag :stop_address %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_city %><br />
+    <%= text_field_tag :stop_city %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_state %><br />
+    <%= text_field_tag :stop_state %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_country %><br />
+    <%= text_field_tag :stop_country %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_postal %><br />
+    <%= number_field_tag :stop_postal %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Add Stop" %>
+  </div>
+<% end %>

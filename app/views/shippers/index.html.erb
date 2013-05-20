@@ -1,0 +1,30 @@
+<h1>Shippers</h1>
+
+<p><%= link_to 'Add a New Shipper', new_shipper_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shipper name</th>
+      <th>Shipper description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @shippers.each do |shipper| %>
+    <tr>
+      <td><%= shipper.shipper_name %></td>
+      <td><%= shipper.shipper_description %></td>
+  
+      <td><%= link_to 'Show', shipper_url(shipper) %></td>
+      <td><%= link_to 'Edit', edit_shipper_url(shipper) %></td>
+      <td><%= link_to 'Destroy', shipper_url(shipper), method: 'delete', data: { confirm: "Do you really want to delete this shipper?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

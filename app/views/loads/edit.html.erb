@@ -1,0 +1,51 @@
+<h1>Editing Load #<%= @load.id %></h1>
+
+
+<%= form_tag(load_url(@load), method: 'put') do %>
+
+  <div>
+    <%= label_tag :bill_of_lading %><br />
+    <%= text_field_tag :bill_of_lading, @load.bill_of_lading %>
+  </div>
+
+  <div>
+    <%= label_tag :carrier_id %><br />
+    <%= text_field_tag :carrier_id, @load.carrier_id %>
+  </div>
+
+  <div>
+    <%= label_tag :vendor_id %><br />
+    <%= text_field_tag :vendor_id, @load.vendor_id %>
+  </div>
+
+  <div>
+    <%= label_tag :shipper_id %><br />
+    <%= text_field_tag :shipper_id, @load.shipper_id %>
+  </div>
+
+  <div>
+    <%= label_tag :equipment_type %><br />
+    <%= text_field_tag :equipment_type, @load.equipment_type %>
+  </div>
+
+  <div>
+    <%= label_tag :inco_terms %><br />
+    <%= text_field_tag :inco_terms, @load.inco_terms %>
+  </div>
+
+  <div>
+    <%= label_tag :freight_terms %><br />
+    <%= text_field_tag :freight_terms, @load.freight_terms %>
+  </div>
+
+  <div>
+    <%= label_tag :mode %><br />
+    <%= text_field_tag :mode, @load.mode %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Update Load" %>
+  </div>
+
+<% end %>

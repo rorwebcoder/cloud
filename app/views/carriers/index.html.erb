@@ -1,0 +1,30 @@
+<h1>Carriers</h1>
+
+<p><%= link_to 'Add a New Carrier', new_carrier_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Carrier name</th>
+      <th>Carrier description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @carriers.each do |carrier| %>
+    <tr>
+      <td><%= carrier.carrier_name %></td>
+      <td><%= carrier.carrier_description %></td>
+  
+      <td><%= link_to 'Show', carrier_url(carrier) %></td>
+      <td><%= link_to 'Edit', edit_carrier_url(carrier) %></td>
+      <td><%= link_to 'Destroy', carrier_url(carrier), method: 'delete', data: { confirm: "Do you really want to delete this carrier?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

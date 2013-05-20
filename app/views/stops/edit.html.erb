@@ -1,0 +1,56 @@
+<h1>Editing Stop #<%= @stop.id %></h1>
+
+
+<%= form_tag(stop_url(@stop), method: 'put') do %>
+
+  <div>
+    <%= label_tag :load_id %><br />
+    <%= number_field_tag :load_id, @stop.load_id %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_type %><br />
+    <%= text_field_tag :stop_type, @stop.stop_type %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_sequence %><br />
+    <%= number_field_tag :stop_sequence, @stop.stop_sequence %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_name %><br />
+    <%= text_field_tag :stop_name, @stop.stop_name %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_address %><br />
+    <%= text_field_tag :stop_address, @stop.stop_address %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_city %><br />
+    <%= text_field_tag :stop_city, @stop.stop_city %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_state %><br />
+    <%= text_field_tag :stop_state, @stop.stop_state %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_country %><br />
+    <%= text_field_tag :stop_country, @stop.stop_country %>
+  </div>
+
+  <div>
+    <%= label_tag :stop_postal %><br />
+    <%= number_field_tag :stop_postal, @stop.stop_postal %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Stop" %>
+  </div>
+
+<% end %>

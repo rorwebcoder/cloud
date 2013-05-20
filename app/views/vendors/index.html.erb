@@ -1,0 +1,30 @@
+<h1>Vendors</h1>
+
+<p><%= link_to 'Add a New Vendor', new_vendor_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vendor name</th>
+      <th>Vendor description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @vendors.each do |vendor| %>
+    <tr>
+      <td><%= vendor.vendor_name %></td>
+      <td><%= vendor.vendor_description %></td>
+  
+      <td><%= link_to 'Show', vendor_url(vendor) %></td>
+      <td><%= link_to 'Edit', edit_vendor_url(vendor) %></td>
+      <td><%= link_to 'Destroy', vendor_url(vendor), method: 'delete', data: { confirm: "Do you really want to delete this vendor?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

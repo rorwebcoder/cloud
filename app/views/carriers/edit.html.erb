@@ -1,0 +1,21 @@
+<h1>Editing Carrier #<%= @carrier.id %></h1>
+
+
+<%= form_tag(carrier_url(@carrier), method: 'put') do %>
+
+  <div>
+    <%= label_tag :carrier_name %><br />
+    <%= text_field_tag :carrier_name, @carrier.carrier_name %>
+  </div>
+
+  <div>
+    <%= label_tag :carrier_description %><br />
+    <%= text_field_tag :carrier_description, @carrier.carrier_description %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Carrier" %>
+  </div>
+
+<% end %>

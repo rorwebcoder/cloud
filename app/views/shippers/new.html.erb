@@ -1,0 +1,21 @@
+<h1>New Shipper</h1>
+
+
+<%= form_tag(shippers_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :shipper_name %><br />
+    <%= text_field_tag :shipper_name %>
+  </div>
+
+  <div>
+    <%= label_tag :shipper_description %><br />
+    <%= text_field_tag :shipper_description %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Shipper" %>
+  </div>
+<% end %>

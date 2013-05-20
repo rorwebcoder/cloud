@@ -1,0 +1,21 @@
+<h1>New Carrier</h1>
+
+
+<%= form_tag(carriers_url, method: 'post') do %>
+
+
+  <div>
+    <%= label_tag :carrier_name %><br />
+    <%= text_field_tag :carrier_name %>
+  </div>
+
+  <div>
+    <%= label_tag :carrier_description %><br />
+    <%= text_field_tag :carrier_description %>
+  </div>
+
+
+  <div>
+    <%= submit_tag "Create Carrier" %>
+  </div>
+<% end %>
