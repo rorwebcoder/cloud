@@ -1,6 +1,6 @@
 <h1>Stops</h1>
 
-<p><%= link_to 'Add a New Stop', new_stop_url %></p>
+<p><%= link_to 'Add a New Stop', new_load_stop_url %></p>
 
 <table>
   <thead>
@@ -32,10 +32,10 @@
       <td><%= stop.stop_state %></td>
       <td><%= stop.stop_country %></td>
       <td><%= stop.stop_postal %></td>
-  
-      <td><%= link_to 'Show', stop_url(stop) %></td>
-      <td><%= link_to 'Edit', edit_stop_url(stop) %></td>
-      <td><%= link_to 'Destroy', stop_url(stop), method: 'delete', data: { confirm: "Do you really want to delete this stop?" } %></td>
+
+      <td><%= link_to 'Show', load_stop_url(stop.load, stop) %></td>
+      <td><%= link_to 'Edit', edit_load_stop_url(stop.load, stop) %></td>
+      <td><%= link_to 'Destroy', [stop.load, stop], method: 'delete', data: { confirm: "Do you really want to delete this stop?" } %></td>
 
     </tr>
   <% end %>

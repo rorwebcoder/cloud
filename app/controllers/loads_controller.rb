@@ -24,8 +24,8 @@ class LoadsController < ApplicationController
     @load.mode = params[:mode]
 
     if @load.save
-      @load = Load.find_by_id(params[:id])
-      redirect_to '/loads/:id/stops/new'
+      #redirect_to "/loads/#{@load.id}/stops/new"
+      redirect_to new_load_stop_url(@load.id)
     else
       render 'new'
     end
@@ -55,6 +55,10 @@ class LoadsController < ApplicationController
 
   def destroy
     @load = Load.find_by_id(params[:id])
+    @stop = @load.stops.all
+    @stop.each do |stop|
+     stop.destroy
+     end
     @load.destroy
     redirect_to loads_url
   end

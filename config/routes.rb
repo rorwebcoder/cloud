@@ -56,20 +56,20 @@ Cloudqwest::Application.routes.draw do
 
   # Routes for the Stop resource:
   # CREATE
-  get '/loads/:load_id/stops/new', controller: 'stops', action: 'new'
+  get '/loads/:load_id/stops/new', controller: 'stops', action: 'new', as: 'new_load_stop'
   post '/loads/:load_id/stops', controller: 'stops', action: 'create'
 
 
   # READ
-  get '/stops', controller: 'stops', action: 'index', as: 'stops'
-  get '/stops/:id', controller: 'stops', action: 'show', as: 'stop'
+  get '/loads/:load_id/stops', controller: 'stops', action: 'index', as: 'load_stops'
+  get '/loads/:load_id/stops/:id', controller: 'stops', action: 'show', as:'load_stop'
 
   # UPDATE
-  get '/stops/:id/edit', controller: 'stops', action: 'edit', as: 'edit_stop'
-  put '/stops/:id', controller: 'stops', action: 'update'
+  get '/loads/:load_id/stops/:id/edit', controller: 'stops', action: 'edit', as: 'edit_load_stop'
+  put '/loads/:load_id/stops/:id', controller: 'stops', action: 'update'
 
   # DELETE
-  delete '/stops/:id', controller: 'stops', action: 'destroy'
+  delete '/loads/:load_id/stops/:id', controller: 'stops', action: 'destroy'
   #------------------------------
 
   # Routes for the Load resource:

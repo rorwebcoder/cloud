@@ -1,7 +1,7 @@
 <h1>Editing Stop #<%= @stop.id %></h1>
 
 
-<%= form_tag(stop_url(@stop), method: 'put') do %>
+<%= form_tag(load_stop_url(@stop.load.id), method: 'put') do %>
 
   <div>
     <%= label_tag :load_id %><br />
@@ -48,7 +48,7 @@
     <%= number_field_tag :stop_postal, @stop.stop_postal %>
   </div>
 
-  
+
   <div>
     <%= submit_tag "Update Stop" %>
   </div>

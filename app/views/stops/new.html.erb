@@ -1,13 +1,12 @@
-<h1>Add Load Stops</h1>
+<h1>Add Load Stops </h1>
 
 
-<%= form_tag(stops_url, method: 'post') do %>
+<%= form_tag( load_stops_url(@the_load.id), method: 'post') do %>
 
 
   <div>
     <%= label_tag :load_id %><br />
-    <%= number_field_tag :load_id %>
-
+    <%= text_field_tag :load_id,@stop.load.bill_of_lading %>
   </div>
 
   <div>
@@ -50,8 +49,12 @@
     <%= number_field_tag :stop_postal %>
   </div>
 
-
   <div>
-    <%= submit_tag "Add Stop" %>
+    <%= submit_tag "Save and Add Stop" %>
   </div>
+  <div>
+    <%= submit_tag "Done" %>
+  </div>
+
 <% end %>
+

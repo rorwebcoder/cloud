@@ -4,40 +4,69 @@
   <b>Bill of lading:</b>
   <%= @load.bill_of_lading %>
 </p>
-
 <p>
   <b>Carrier:</b>
   <%= @load.carrier_id %>
 </p>
-
 <p>
   <b>Vendor:</b>
   <%= @load.vendor_id %>
 </p>
-
 <p>
   <b>Shipper:</b>
   <%= @load.shipper_id %>
 </p>
-
 <p>
   <b>Equipment type:</b>
   <%= @load.equipment_type %>
 </p>
-
 <p>
   <b>Inco terms:</b>
   <%= @load.inco_terms %>
 </p>
-
 <p>
   <b>Freight terms:</b>
   <%= @load.freight_terms %>
 </p>
-
 <p>
   <b>Mode string:</b>
   <%= @load.mode %>
 </p>
 
+<h2>Load Stops</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Load</th>
+      <th>Stop type</th>
+      <th>Stop sequence</th>
+      <th>Stop name</th>
+      <th>Stop address</th>
+      <th>Stop city</th>
+      <th>Stop state</th>
+      <th>Stop country</th>
+      <th>Stop postal</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @load.stops.each do |stop| %>
+    <tr>
+      <td><%= stop.load_id %></td>
+      <td><%= stop.stop_type %></td>
+      <td><%= stop.stop_sequence %></td>
+      <td><%= stop.stop_name %></td>
+      <td><%= stop.stop_address %></td>
+      <td><%= stop.stop_city %></td>
+      <td><%= stop.stop_state %></td>
+      <td><%= stop.stop_country %></td>
+      <td><%= stop.stop_postal %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
 

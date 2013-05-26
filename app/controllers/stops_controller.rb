@@ -1,25 +1,26 @@
 class StopsController < ApplicationController
 
   def index
-    @stops = Stop.all
+    load = Load.find(params[:load_id])
+    @stops = load.stops
   end
 
   def show
-    @stop = Stop.find_by_id(params[:id])
+    load = Load.find(params[:load_id])
+    @stop = load.stops.find(params[:id])
   end
 
   def new
     load = Load.find(params[:load_id])
-    @stop = load.stops.build
+    @the_load = Load.find(params[:load_id])
+    @stop = load.stops.new
   end
 
   def create
     load = Load.find(params[:load_id])
-    @stop = load.stops.create(params[:stop])
-
-    #@stop.load_id = Load.find(params[:load_id])
-    #@stop = Stop.new
-    #@stop.load_id = params[:load_id]
+    @the_load = Load.find(params[:load_id])
+    @stop = load.stops.new
+    @stop.load_id = params[:load_id]
     @stop.stop_type = params[:stop_type]
     @stop.stop_sequence = params[:stop_sequence]
     @stop.stop_name = params[:stop_name]
@@ -29,19 +30,27 @@ class StopsController < ApplicationController
     @stop.stop_country = params[:stop_country]
     @stop.stop_postal = params[:stop_postal]
 
-    if @stop.save
-      redirect_to stops_url
+  if @stop.save
+    if params[:commit] == "Save and Add Stop"
+      redirect_to new_load_stop_url(@the_load.id)
     else
-      render 'new'
+      redirect_to load_stops_url(@the_load.id)
     end
+  else
+    render 'new'
   end
+ end
+
+
 
   def edit
-    @stop = Stop.find_by_id(params[:id])
+    load = Load.find(params[:load_id])
+    @stop = load.stops.find_by_id(params[:id])
   end
 
   def update
-    @stop = Stop.find_by_id(params[:id])
+    load = Load.find(params[:load_id])
+    @stop = load.stops.find_by_id(params[:id])
     @stop.load_id = params[:load_id]
     @stop.stop_type = params[:stop_type]
     @stop.stop_sequence = params[:stop_sequence]
@@ -53,15 +62,16 @@ class StopsController < ApplicationController
     @stop.stop_postal = params[:stop_postal]
 
     if @stop.save
-      redirect_to stops_url
+      redirect_to load_stops_url(load.id)
     else
-      render 'new'
+      #redirect_to edit_load_stops_url(load.id)
     end
   end
 
   def destroy
-    @stop = Stop.find_by_id(params[:id])
+    load = Load.find(params[:load_id])
+    @stop = load.stops.find(params[:id])
     @stop.destroy
-    redirect_to stops_url
+    redirect_to load_stops_url
   end
 end

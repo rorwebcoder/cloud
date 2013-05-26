@@ -49,3 +49,47 @@
   </div>
 
 <% end %>
+
+<h2>Load Stops</h2>
+
+<p><%= link_to 'Add a New Stop', new_load_stop_url(@load.id) %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Load</th>
+      <th>Stop type</th>
+      <th>Stop sequence</th>
+      <th>Stop name</th>
+      <th>Stop address</th>
+      <th>Stop city</th>
+      <th>Stop state</th>
+      <th>Stop country</th>
+      <th>Stop postal</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @load.stops.each do |stop| %>
+    <tr>
+      <td><%= stop.load_id %></td>
+      <td><%= stop.stop_type %></td>
+      <td><%= stop.stop_sequence %></td>
+      <td><%= stop.stop_name %></td>
+      <td><%= stop.stop_address %></td>
+      <td><%= stop.stop_city %></td>
+      <td><%= stop.stop_state %></td>
+      <td><%= stop.stop_country %></td>
+      <td><%= stop.stop_postal %></td>
+
+      <td><%= link_to 'Show', load_stop_url(@load.id, stop.id) %></td>
+      <td><%= link_to 'Edit', edit_load_stop_url(@load.id, stop.id) %></td>
+      <td><%= link_to 'Destroy', [stop.load, stop], method: 'delete', data: { confirm: "Do you really want to delete this stop?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
