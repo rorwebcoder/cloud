@@ -52,6 +52,7 @@ Cloudqwest::Application.routes.draw do
 
   resources :loads do
     resources :stops
+    resources :messages
   end
 
   # Routes for the Stop resource:
@@ -88,7 +89,21 @@ Cloudqwest::Application.routes.draw do
   # DELETE
   delete '/loads/:id', controller: 'loads', action: 'destroy'
   #------------------------------
+ # Routes for the Message resource:
+  # CREATE
+  get '/loads/:load_id/messages/new', controller: 'messages', action: 'new', as: 'new_load_message'
+  post '/loads/:load_id/messages', controller: 'messages', action: 'create'
 
+  # READ
+  get '/loads/:load_id/messages', controller: 'messages', action: 'index', as: 'load_messages'
+  get '/loads/:load_id/messages/:id', controller: 'messages', action: 'show', as: 'load_message'
+
+  # UPDATE
+  get '/loads/:load_id/messages/:id/edit', controller: 'messages', action: 'edit', as: 'edit_load_message'
+  put '/loads/:load_id/messages/:id', controller: 'messages', action: 'update'
+
+  # DELETE
+  delete '/loads/:load_id/messages/:id', controller: 'messages', action: 'destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

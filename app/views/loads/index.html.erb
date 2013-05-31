@@ -45,7 +45,9 @@
       <td><%= load.inco_terms %></td>
       <td><%= load.freight_terms %></td>
       <td><%= load.mode %></td>
-      <td style="padding-right: 500px"</td>
+      <td style="padding-right: 200px"</td>
+      <td><%= link_to 'Activity Stream', load_messages_url(load.id) %></td>
+      <td style="padding-right: 300px"</td>
       <td><%= link_to 'Show', load_url(load) %></td>
       <td><%= link_to 'Edit', edit_load_url(load) %></td>
       <td><%= link_to 'Destroy', load_url(load), method: 'delete', data: { confirm: "Do you really want to delete this load?" } %></td>

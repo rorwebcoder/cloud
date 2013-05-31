@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130518211104) do
+ActiveRecord::Schema.define(:version => 20130531024140) do
 
   create_table "carriers", :force => true do |t|
     t.string "carrier_name"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(:version => 20130518211104) do
     t.string  "freight_terms"
     t.string  "mode"
   end
+
+  create_table "messages", :force => true do |t|
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "load_id"
+    t.string   "ancestry"
+  end
+
+  add_index "messages", ["ancestry"], :name => "index_messages_on_ancestry"
 
   create_table "shippers", :force => true do |t|
     t.string "shipper_name"
