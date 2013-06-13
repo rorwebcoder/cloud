@@ -52,3 +52,12 @@
     <%= submit_tag "Create Stops" %>
   </div>
 <% end %>
+
+<% if @load.errors.any? %>
+  <ul>
+    <% @load.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+

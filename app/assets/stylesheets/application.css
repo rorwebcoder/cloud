@@ -12,8 +12,8 @@
  *= require_tree .
  */
 html, body {
-  background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
+  background-color: #6E6B62;
+  font-family: Georgia, Helvetica, Arial;
   font-size: 14px;
 }
 
@@ -38,6 +38,7 @@ a {
   padding: 20px 40px;
   border: solid 1px black;
   margin-top: 20px;
+  border-radius: 12px;
 }
 
 #flash_notice, #flash_error, #flash_alert {
@@ -108,7 +109,7 @@ a {
 }
 
 .message .content a {
-  color: #000;
+  color: #a03e1d;
   text-decoration: none;
 }
 
@@ -133,4 +134,16 @@ a {
 
 .nested_messages .nested_messages .nested_messages .nested_messages {
   margin-left: 0;
+}
+
+.signup {
+  font-size: 30px;
+  margin-top: 100px;
+  margin-left: 500px;
+}
+
+.login {
+  font-size: 30px;
+  margin-top: 5px;
+  margin-left: 500px;
 }

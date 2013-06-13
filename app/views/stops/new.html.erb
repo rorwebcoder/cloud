@@ -56,5 +56,14 @@
     <%= submit_tag "Done" %>
   </div>
 
+
+  <% if @stop.errors.any? %>
+  <ul>
+    <% @stop.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
 <% end %>
 
