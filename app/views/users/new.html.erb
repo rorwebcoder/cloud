@@ -16,11 +16,23 @@
 
   <div>
     <%= label_tag :password %><br />
-    <%= text_field_tag :password %>
+    <%= password_field_tag :password %>
   </div>
-
+  <div>
+    <%= label_tag :password_confirmation %><br />
+    <%= password_field_tag :password_confirmation %>
+  </div>
 
   <div>
     <%= submit_tag "Create User" %>
   </div>
+
+  <% if @user.errors.any? %>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
 <% end %>

@@ -56,8 +56,12 @@ class LoadsController < ApplicationController
   def destroy
     @load = Load.find_by_id(params[:id])
     @stop = @load.stops.all
-    @stop.each do |stop|
+    @message= @load.messages.all
+     @stop.each do |stop|
      stop.destroy
+     end
+     @message.each do |message|
+     message.destroy
      end
     @load.destroy
     redirect_to loads_url

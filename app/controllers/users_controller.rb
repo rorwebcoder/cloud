@@ -17,9 +17,11 @@ class UsersController < ApplicationController
     @user.email = params[:email]
     @user.entity = params[:entity]
     @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
 
     if @user.save
-      redirect_to users_url
+      session["user_id"] = @user.id
+      redirect_to loads_url
     else
       render 'new'
     end
@@ -36,6 +38,7 @@ class UsersController < ApplicationController
     @user.last_name = params[:last_name]
     @user.entity = params[:entity]
     @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
 
     if @user.save
       redirect_to users_url
