@@ -9,7 +9,6 @@
 <body>
 
 <% if session["user_id"].present? %>
-Hello, <%= User.find_by_id(session["user_id"]).first_name %>!
 
   <header>
     <h1>CloudQwest - A Collaborative Logistics Platform</h1>

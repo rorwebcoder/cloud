@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 Vendor.destroy_all
 
 data = [{id: 1, vendor_name: "ALPHA", vendor_description: "Alpha Plastics"},{id: 2, vendor_name: "BETA", vendor_description: "Beta Plastics"}, {id: 3, vendor_name: "GAMMA", vendor_description: "Gamma Plastics"} ]
