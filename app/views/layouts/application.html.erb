@@ -15,21 +15,17 @@ Hello, <%= User.find_by_id(session["user_id"]).first_name %>!
     <h1>CloudQwest - A Collaborative Logistics Platform</h1>
 
     <nav>
-      <%= link_to "Load List", '/loads' %> |
-      <%= link_to "Vendor List", '/vendors' %> |
-      <%= link_to "Carrier List", '/carriers' %> |
-      <%= link_to "Shipper List", '/shippers' %> |
-      <%= link_to "Sign Out", "/logout" %> |
-      <%= link_to "Users", "/users" %>
+      <%= link_to "Load List", '/loads', class: "btn btn-large btn-primary" %> |
+      <%= link_to "Vendor List", '/vendors', class: "btn btn-large btn-primary" %> |
+      <%= link_to "Carrier List", '/carriers', class: "btn btn-large btn-primary" %> |
+      <%= link_to "Shipper List", '/shippers', class: "btn btn-large btn-primary" %> |
+      <%= link_to "Sign Out", "/logout", class: "btn btn-large btn-primary" %> |
+      <%= link_to "Users", "/users", class: "btn btn-large btn-primary" %>
   </header>
 
 <% else %>
-        <div class="signup">
-        <%= link_to "Sign Up", '/users/new' %>
-        </div>
-        <div class="login">
-        <%= link_to "Login", '/login' %>
-      </div>
+        <%= link_to "Sign Up", '/users/new', class: "btn btn-large btn-primary" %>
+        <%= link_to "Login", '/login', class: "btn btn-large btn-primary" %>
       <% end %>
 
       <div class="notice"><%= notice %></div>

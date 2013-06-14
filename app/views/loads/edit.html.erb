@@ -45,14 +45,14 @@
 
 
   <div>
-    <%= submit_tag "Update Load" %>
+    <%= submit_tag "Update Load", class: "btn btn-large" %>
   </div>
 
 <% end %>
 
 <h2>Load Stops</h2>
 
-<p><%= link_to 'Add a New Stop', new_load_stop_url(@load.id) %></p>
+<p><%= link_to 'Add a New Stop', new_load_stop_url(@load.id), class: "btn btn-large btn-primary" %></p>
 
 <table>
   <thead>
@@ -85,9 +85,9 @@
       <td><%= stop.stop_country %></td>
       <td><%= stop.stop_postal %></td>
 
-      <td><%= link_to 'Show', load_stop_url(@load.id, stop.id) %></td>
-      <td><%= link_to 'Edit', edit_load_stop_url(@load.id, stop.id) %></td>
-      <td><%= link_to 'Destroy', [stop.load, stop], method: 'delete', data: { confirm: "Do you really want to delete this stop?" } %></td>
+      <td><%= link_to 'Show', load_stop_url(@load.id, stop.id), class: "btn btn-large" %></td>
+      <td><%= link_to 'Edit', edit_load_stop_url(@load.id, stop.id), class: "btn btn-large" %></td>
+      <td><%= link_to 'Destroy', [stop.load, stop], class: "btn btn-large",  method: 'delete', data: { confirm: "Do you really want to delete this stop?" } %></td>
 
     </tr>
   <% end %>

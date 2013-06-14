@@ -1,6 +1,6 @@
 <h1>Shippers</h1>
 
-<p><%= link_to 'Add a New Shipper', new_shipper_url %></p>
+<p><%= link_to 'Add a New Shipper', new_shipper_url, class: "btn btn-large btn-primary" %></p>
 
 <table>
   <thead>
@@ -18,10 +18,10 @@
     <tr>
       <td><%= shipper.shipper_name %></td>
       <td><%= shipper.shipper_description %></td>
-  
-      <td><%= link_to 'Show', shipper_url(shipper) %></td>
-      <td><%= link_to 'Edit', edit_shipper_url(shipper) %></td>
-      <td><%= link_to 'Destroy', shipper_url(shipper), method: 'delete', data: { confirm: "Do you really want to delete this shipper?" } %></td>
+
+      <td><%= link_to 'Show', shipper_url(shipper), class: "btn btn-large" %></td>
+      <td><%= link_to 'Edit', edit_shipper_url(shipper), class: "btn btn-large" %></td>
+      <td><%= link_to 'Destroy', shipper_url(shipper), class: "btn btn-large", method: 'delete', data: { confirm: "Do you really want to delete this shipper?" } %></td>
 
     </tr>
   <% end %>

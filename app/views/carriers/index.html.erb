@@ -1,6 +1,6 @@
 <h1>Carriers</h1>
 
-<p><%= link_to 'Add a New Carrier', new_carrier_url %></p>
+<p><%= link_to 'Add a New Carrier', new_carrier_url, class: "btn btn-large btn-primary" %></p>
 
 <table>
   <thead>
@@ -18,10 +18,10 @@
     <tr>
       <td><%= carrier.carrier_name %></td>
       <td><%= carrier.carrier_description %></td>
-  
-      <td><%= link_to 'Show', carrier_url(carrier) %></td>
-      <td><%= link_to 'Edit', edit_carrier_url(carrier) %></td>
-      <td><%= link_to 'Destroy', carrier_url(carrier), method: 'delete', data: { confirm: "Do you really want to delete this carrier?" } %></td>
+
+      <td><%= link_to 'Show', carrier_url(carrier), class: "btn btn-large" %></td>
+      <td><%= link_to 'Edit', edit_carrier_url(carrier), class: "btn btn-large" %></td>
+      <td><%= link_to 'Destroy', carrier_url(carrier), class: "btn btn-large",  method: 'delete', data: { confirm: "Do you really want to delete this carrier?" } %></td>
 
     </tr>
   <% end %>
